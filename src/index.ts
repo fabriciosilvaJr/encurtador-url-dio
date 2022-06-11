@@ -1,4 +1,11 @@
-import express from 'express';
+import express, {Request, Response} from 'express';
 
 const api = express();
-api.listen(5000, () => console.log('Express Listening'))
+
+api.get('/test', (req: Request, res: Response) =>{
+    res.json({success: true})
+
+
+})
+
+api.listen(5000, () => console.log('Express no Listening'))

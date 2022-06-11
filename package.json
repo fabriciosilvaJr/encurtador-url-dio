@@ -4,6 +4,8 @@
   "description": "Url SHortener for DIO Project",
   "main": "index.js",
   "scripts": {
+    "build:watch": "tsc -w",
+    "dev": "nodemon ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,6 +18,10 @@
     "eslint": "^8.17.0",
     "express": "^4.18.1",
     "nodemon": "^2.0.16",
+    "shortid": "^2.2.16",
     "typescript": "^4.7.3"
+  },
+  "devDependencies": {
+    "@types/shortid": "^0.0.29"
   }
 }
