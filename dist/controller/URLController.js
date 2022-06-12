@@ -18,11 +18,21 @@ const Constants_1 = require("../config/Constants");
 class URLController {
     shorten(req, response) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(req.body);
             const { originURL } = req.body;
             const hash = shortid_1.default.generate();
             const shortURL = `${Constants_1.config.API_URL}/${hash}`;
             response.json({ originURL, hash, shortURL });
+        });
+    }
+    redirect(req, response) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { hash } = req.params;
+            const url = {
+                originURL: "https://cloud.mongodb.com/v2/62a3ebb85f16a24e469b4357#clusters",
+                hash: "6FqOh_oiw",
+                shortURl: "http://localhost:5000/6FqOh_oiw"
+            };
+            response.redirect(url.originURL);
         });
     }
 }
